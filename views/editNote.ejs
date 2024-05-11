@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/updateNote/<%= note.id %>" method="post">
+        <input type="text" name="title" value="<%= note.title %>" />
+        <input type="text" name="note" value="<%= note.notes %>" />
+        <button>Update</button>
+    </form>
+</body>
+
+</html>

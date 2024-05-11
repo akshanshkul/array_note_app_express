@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            height: 55px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .button {
+            display: inline-block;
+            border: none;
+            height: 40px;
+        }
+
+        .add-button {
+            display: block;
+            border: 2px solid rgb(0, 89, 255);
+            font-size: 16px;
+            padding: 4px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(1, 21, 201);
+            text-decoration: none;
+            float: right;
+        }
+
+        .box {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .card {
+            width: 30%;
+            border: blue 2px solid;
+            padding: 10px;
+        }
+
+        .h1 {
+            text-align: center;
+            font-size: 24px;
+            color: tomato;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+
+        .delete {
+            display: block;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            background-color: red;
+            color: white;
+            height: 20px;
+            padding: 2px;
+            border-radius: 10px;
+            float: right;
+            margin: 4px;
+        }
+
+        .edit {
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            background-color: rgb(0, 255, 47);
+            color: white;
+            height: 20px;
+            padding: 2px;
+            width: 40px;
+            border-radius: 10px;
+            margin: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Cards</h1>
+    </header>
+    <div class="content">
+        <div class="button">
+            <a href="/addCard" class="add-button">Add Card</a>
+
+        </div>
+
+        <div class="box">
+            <% for(note of noteData ) {%>
+                <div class="card">
+                    <div class="h1">
+                        <%= note.title %>
+                    </div>
+                    <div class="note"><%= note.notes %></div>
+                    <a href="/edit/<%= note.id %>" class="edit">Edit</a>
+                    <a href="/delete/<%= note.id %>" class="delete">Delete</a>
+
+                </div>
+                <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
